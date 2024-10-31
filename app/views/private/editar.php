@@ -1,0 +1,30 @@
+<?php
+require_once dirname(__FILE__) . '\..\templates\header.php';
+require_once (dirname(__FILE__) . '\..\..\controllers\CriaturaController.php');
+require_once (dirname(__FILE__) . '\..\..\models\Criatura.php');
+
+$criaturaController = new CriaturaController();
+$ubicacionAction = "http://localhost/DW_EV1_ROLEPLAY" . '\app\controllers\CriaturaController.php';
+$tipoPeticion = "editar";
+
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    $id = $_GET["id"];
+}
+
+$criatura = $criaturaController->obtenerPorId($id);
+$valueName = $criatura->getName();
+$valueDescription = $criatura->getDescription();
+$valueAvatar = $criatura->getAvatar();
+$valueAttack = $criatura->getAttackPower();
+$valueLife = $criatura->getLifeLevel();
+$valueWeapon = $criatura->getWeapon();
+
+require_once dirname(__FILE__) . '\..\templates\formularioDatos.php';
+?>
+
+<button type="submit" class="btn btn-primary mt-3">Editar Criatura</button>
+</form>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
