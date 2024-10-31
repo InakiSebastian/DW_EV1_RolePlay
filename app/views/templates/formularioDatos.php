@@ -1,27 +1,27 @@
 <?php ?>
 
 <form class="p-4" method="POST" action=<?php echo $ubicacionAction ?>>
-    <div class="form-group">
+    <div class="form-group" >
         <label for="inputName">NAME</label>
-        <input type="text" class="form-control" name="inputName" id="inputName">
+        <input required type="text" class="form-control" name="inputName" id="inputName">
     </div>
     <div class="form-group">
         <label for="inputName">DESCRIPTION</label>
-        <input type="text" class="form-control" name="inputDescription" id="inputDescription">
+        <input required type="text" class="form-control" name="inputDescription" id="inputDescription">
     </div>
     <div class="form-group">
         <label for="inputName">AVATAR</label>
-        <input type="text" class="form-control" name="inputAvatar" id="inputAvatar">
+        <input required type="text" class="form-control" name="inputAvatar" id="inputAvatar">
     </div>
     <div class="form-group">
         <label for="inputName">ATTACK POWER</label>
-        <input type="text" class="form-control" name="inputAttack" id="inputAttack">
+        <input required type="text" class="form-control" name="inputAttack" id="inputAttack">
     </div>
     <div class="form-group">
         <label for="inputName">LIFE LEVEL</label>
-        <input type="text" class="form-control" name="inputLife" id="inputLife">
+        <input required type="text" class="form-control" name="inputLife" id="inputLife">
     </div>
     <div class="form-group">
         <label for="inputName">WEAPON</label>
-        <input type="text" class="form-control" name="inputWeapon" id="inputWeapon">
+        <input required type="text" class="form-control" name="inputWeapon" id="inputWeapon">
     </div>
