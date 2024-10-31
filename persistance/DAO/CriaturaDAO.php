@@ -52,8 +52,22 @@ class CriaturaDAO {
             $criatura->setLifeLevel($criaturaBD['lifeLevel']);
             $criatura->setWeapon($criaturaBD['weapon']);
         }
-        
+
         return $criatura;
+    }
+
+    public function insertCriatura($criatura) {
+        $query = "INSERT INTO " . self::CRIATURA_TABLE . "( name, description, avatar, attackPower, lifeLevel, weapon) VALUES (?,?,?,?,?,?)";
+        $stmt = mysqli_prepare($this->conex, $query);
+        $name= $criatura->getName();
+        $description = $criatura->getDescription();
+        $avatar = $criatura->getAvatar();
+        $attack = $criatura->getAttackPower();
+        $life = $criatura->getLifeLevel();
+        $weapon = $criatura->getWeapon();
+        
+        mysqli_stmt_bind_param($stmt, 'ssssss', $name,$description,$avatar,$attack,$life,$weapon);
+        return $stmt->execute();
     }
 }
 

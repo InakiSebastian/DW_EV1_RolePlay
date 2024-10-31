@@ -25,3 +25,4 @@
         <label for="inputName">WEAPON</label>
         <input required type="text" class="form-control" name="inputWeapon" id="inputWeapon">
     </div>
+    <input type="hidden" name="type" value=<?php echo $tipoPeticion?> >

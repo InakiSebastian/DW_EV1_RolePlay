@@ -1,6 +1,7 @@
 <?php
 require_once dirname(__FILE__) . '\..\templates\header.php';
 $ubicacionAction = "http://localhost/DW_EV1_ROLEPLAY"  . '\app\controllers\CriaturaController.php';
+$tipoPeticion = "crear";
 require_once dirname(__FILE__) . '\..\templates\formularioDatos.php';
 ?>
 
