@@ -1,6 +1,9 @@
-<?php
+<?php 
+require_once (dirname(__FILE__) . '\..\..\..\utils\SessionUtils.php');
+SessionUtils::startSessionIfNotStarted();
 
-?>
+
+ ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,13 +26,30 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="crearCriatura.php">CREAR CRIATURA</a>
-                    </li>
-                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="login.php">LOGIN</a>
-                    </li>
-                   
+                    <?php
+                    if (isset($_SESSION['user'])) {
+                        echo '<li class="nav-item">';
+                        echo '   <a class="nav-link" aria-current="page" href="crearCriatura.php">CREAR CRIATURA</a>';
+                        echo '</li>';
+                        
+                         echo '<li class="nav-item">';
+                        echo '   <a class="nav-link" aria-current="page" href="../../controllers/loginController.php?">LOGOUT</a>';
+                        echo '</li>';
+                    
+                    }
+                    ?>
+                    
+                     <?php
+                    if (!isset($_SESSION['user'])) {
+                        echo '<li class="nav-item">';
+                        echo '   <a class="nav-link" aria-current="page" href="login.php">LOGIN</a>';
+                        echo '</li>';
+                    }
+                    ?>
+                    
+                    
+                        
+
                 </ul>
             </div>
         </div>
