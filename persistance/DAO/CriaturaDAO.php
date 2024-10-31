@@ -19,15 +19,15 @@ class CriaturaDAO {
         $result = mysqli_query($this->conex, $query);
         $criaturas = array();
 
-        while ($criatura = mysqli_fetch_array($result)) {
+        while ($criaturaBD = mysqli_fetch_array($result)) {
             $criatura = new Criatura();
-            $criatura->setIdCreature($criatura['idCreature']);
-            $criatura->setName($criatura['name']);
-            $criatura->setDescription($criatura['description']);
-            $criatura->setAvatar($criatura['avatar']);
-            $criatura->setAttackPower($criatura['attackPower']);
-            $criatura->setLifeLevel($criatura['lifelevel']);
-            $criatura->setWeapon($criatura['weapon']);
+            $criatura->setIdCreature($criaturaBD['idCreature']);
+            $criatura->setName($criaturaBD['name']);
+            $criatura->setDescription($criaturaBD['description']);
+            $criatura->setAvatar($criaturaBD['avatar']);
+            $criatura->setAttackPower($criaturaBD['attackPower']);
+            $criatura->setLifeLevel($criaturaBD['lifeLevel']);
+            $criatura->setWeapon($criaturaBD['weapon']);
 
             array_push($criaturas, $criatura);
         }
@@ -49,7 +49,7 @@ class CriaturaDAO {
             $criatura->setDescription($criaturaBD['description']);
             $criatura->setAvatar($criaturaBD['avatar']);
             $criatura->setAttackPower($criaturaBD['attackPower']);
-            $criatura->setLifeLevel($criaturaBD['lifelevel']);
+            $criatura->setLifeLevel($criaturaBD['lifeLevel']);
             $criatura->setWeapon($criaturaBD['weapon']);
         }
         
