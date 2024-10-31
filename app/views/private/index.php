@@ -8,25 +8,28 @@ $listaCriaturas = $criaturaController->obtenerListaCriaturas();
 
 <body>
 
-<?php
-echo "<h1 class='text-center'>BIENVENIDO USUARIO LOGEADO</h1>";
-?>
+    <?php
+    echo "<h1 class='text-center'>BIENVENIDO USUARIO LOGEADO</h1>";
+    ?>
     <hr>
     <h2 class="text-center">Abajo se encuentran las criaturas</h2>
 
     <div class="container-fluid">
         <div class="row">
-<?php
-foreach ($listaCriaturas as $criatura) {
-    echo '<div class="card ms-3" style="width: 18rem;">';
-    echo '<img class="img-fluid" style="height:200px;width:17rem;" src="' . $criatura->getAvatar() . '" class="card-img-top" alt="...">';
-    echo '<div class="card-body">';
-    echo '<h5 class="card-title">' . $criatura->getName() . '</h5>';
-    echo '<p class="card-text">' . $criatura->getDescription() . '</p>';
-    echo '</div>';
-    echo '</div>';
-}
-?>
+            <?php
+            foreach ($listaCriaturas as $criatura) {
+                echo '<div class="card ms-3" style="width: 18rem;">';
+                echo '<img class="img-fluid" style="height:200px;width:17rem;" src="' . $criatura->getAvatar() . '" class="card-img-top" alt="...">';
+                echo '<div class="card-body">';
+                echo '<h5 class="card-title">' . $criatura->getName() . '</h5>';
+                echo '<p class="card-text">' . $criatura->getDescription() . '</p>';
+                echo '<a type="button" class="btn btn-secondary" href="">Detalles</a>';
+                echo '<a type="button" class="btn btn-secondary" href="">EDITAR</a>';
+                echo '<a type="button" class="btn btn-secondary" href="">BORRAR</a>';
+                echo '</div>';
+                echo '</div>';
+            }
+            ?>
 
         </div>
 
