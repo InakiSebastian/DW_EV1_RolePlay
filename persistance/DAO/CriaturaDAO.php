@@ -1,6 +1,6 @@
 <?php
 
-require_once (dirname(__FILE__) . '\..\PersistentManager.php');
+require_once (dirname(__FILE__) . '\..\conf\PersistentManager.php');
 require_once (dirname(__FILE__) . '\..\..\app\models\Criatura.php');
 
 class CriaturaDAO {
@@ -19,7 +19,7 @@ class CriaturaDAO {
         $result = mysqli_query($this->conex, $query);
         $criaturas = array();
 
-        while ($criatura = mysql_fetch_array($result)) {
+        while ($criatura = mysqli_fetch_array($result)) {
             $criatura = new Criatura();
             $criatura->setIdCreature($criatura['idCreature']);
             $criatura->setName($criatura['name']);
