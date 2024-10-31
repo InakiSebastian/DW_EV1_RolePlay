@@ -26,6 +26,9 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="crearCriatura.php">CREAR CRIATURA</a>
                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="login.php">LOGIN</a>
+                    </li>
                    
                 </ul>
             </div>
