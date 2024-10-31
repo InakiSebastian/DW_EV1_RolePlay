@@ -3,6 +3,10 @@ require_once dirname(__FILE__) . "/../templates/header.php";
 require_once (dirname(__FILE__) . '\..\..\controllers\CriaturaController.php');
 $criaturaController = new CriaturaController();
 $listaCriaturas = $criaturaController->obtenerListaCriaturas();
+
+if (!isset($_SESSION["user"])) {
+    header('Location: ../public/index.php');
+}
 ?>
 
 
