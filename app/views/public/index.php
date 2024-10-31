@@ -17,7 +17,7 @@ $listaCriaturas = $criaturaController->obtenerListaCriaturas();
                 <?php
                 foreach ($listaCriaturas as $criatura) {
                     echo '<div class="card ms-3" style="width: 18rem;">';
-                    echo '<img src="' . $criatura->getAvatar() . '" class="card-img-top" alt="...">';
+                    echo '<img class="img-fluid" style="height:200px;width:17rem;" src="' . $criatura->getAvatar() . '" class="card-img-top" alt="...">';
                     echo '<div class="card-body">';
                     echo '<h5 class="card-title">' . $criatura->getName() . '</h5>';
                     echo '<p class="card-text">' . $criatura->getDescription() . '</p>';
