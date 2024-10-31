@@ -23,9 +23,9 @@ $listaCriaturas = $criaturaController->obtenerListaCriaturas();
                 echo '<div class="card-body">';
                 echo '<h5 class="card-title">' . $criatura->getName() . '</h5>';
                 echo '<p class="card-text">' . $criatura->getDescription() . '</p>';
-                echo '<a type="button" class="btn btn-secondary" href="">Detalles</a>';
-                echo '<a type="button" class="btn btn-secondary" href="">EDITAR</a>';
-                echo '<a type="button" class="btn btn-secondary" href="">BORRAR</a>';
+                echo '<a type="button" class="btn btn-info col-12 mb-1" href="">Detalles</a>';
+                echo '<a type="button" class="btn btn-warning col-12 mb-1" href="">EDITAR</a>';
+                echo '<a type="button" class="btn btn-danger col-12 mb-1" href="">BORRAR</a>';
                 echo '</div>';
                 echo '</div>';
             }
