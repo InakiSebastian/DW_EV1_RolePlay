@@ -23,6 +23,8 @@ require_once dirname(__FILE__) . '\..\templates\formularioDatos.php';
 ?>
 
 <button type="submit" class="btn btn-primary mt-3">Editar Criatura</button>
+<a type="button" class="btn btn-danger  mt-3" href="./index.php">VOLVER</a>
+
 </form>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
