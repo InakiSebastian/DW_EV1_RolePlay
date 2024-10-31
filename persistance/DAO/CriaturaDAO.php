@@ -83,6 +83,13 @@ class CriaturaDAO {
         mysqli_stmt_bind_param($stmt, 'ssssssi', $name, $description, $avatar, $attack, $life, $weapon, $id);
         return $stmt->execute();
     }
+
+    public function delete($id) {
+        $query = "DELETE FROM " . self::CRIATURA_TABLE . " WHERE idCreature =?";
+        $stmt = mysqli_prepare($this->conex, $query);
+        mysqli_stmt_bind_param($stmt, 'i', $id);
+        return $stmt->execute();
+    }
 }
 
 ?>

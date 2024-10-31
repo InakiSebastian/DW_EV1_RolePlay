@@ -31,7 +31,7 @@ if (!isset($_SESSION["user"])) {
                 echo '<p class="card-text">' . $criatura->getDescription() . '</p>';
                 echo '<a type="button" class="btn btn-info col-12 mb-1" href="./detalles.php?id='. $criatura->getIdCreature() . '">Detalles</a>';
                 echo '<a type="button" class="btn btn-warning col-12 mb-1" href="./editar.php?id='. $criatura->getIdCreature() . '">EDITAR</a>';
-                echo '<a type="button" class="btn btn-danger col-12 mb-1" href="./detalles.php?id='. $criatura->getIdCreature(). '">BORRAR</a>';
+                echo '<a type="button" class="btn btn-danger col-12 mb-1" href="..\..\controllers\CriaturaController.php?type=borrar&id='. $criatura->getIdCreature(). '">BORRAR</a>';
                 echo '</div>';
                 echo '</div>';
             }

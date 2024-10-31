@@ -1,7 +1,7 @@
 <?php
 
 require_once dirname(__FILE__) . '\..\..\persistance\DAO\CriaturaDAO.php';
-require_once dirname(__FILE__). '\..\models\Criatura.php';
+require_once dirname(__FILE__) . '\..\models\Criatura.php';
 
 $_criaturaController = new CriaturaController;
 
@@ -13,14 +13,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    if (isset($_GET["type"])) {
+        $_criaturaController->borrarCriatura();
+    }
+}
+
 class CriaturaController {
 
     public function __construct() {
         
     }
-    
+
+    public function borrarCriatura() {
+        $criaturaDao = new CriaturaDAO();
+        $criaturaDao->delete($_GET["id"]);
+        header('Location: ../views/private/index.php');
+    }
+
     public function editarCriatura() {
-        $criatura = new CriaturaDao();
         $criaturaDao = new CriaturaDAO();
         $criatura = new Criatura();
         $criatura->setName($_POST["inputName"]);
@@ -29,14 +40,10 @@ class CriaturaController {
         $criatura->setLifeLevel($_POST["inputLife"]);
         $criatura->setAttackPower($_POST["inputAttack"]);
         $criatura->setWeapon($_POST["inputWeapon"]);
-       $criatura->setIdCreature($_POST["id"]);
+        $criatura->setIdCreature($_POST["id"]);
         $criaturaDao->updateCriatura($criatura);
         header('Location: ../views/private/index.php');
-        
-        
     }
-    
-    
 
     public function crearCriatura() {
         $criaturaDao = new CriaturaDAO();
@@ -47,19 +54,17 @@ class CriaturaController {
         $criatura->setLifeLevel($_POST["inputLife"]);
         $criatura->setAttackPower($_POST["inputAttack"]);
         $criatura->setWeapon($_POST["inputWeapon"]);
-        
+
         $criaturaDao->insertCriatura($criatura);
         header('Location: ../views/private/index.php');
-        
-        
     }
 
     function obtenerListaCriaturas() {
         $criaturaDAO = new CriaturaDAO();
         return $criaturaDAO->selectTodasLasCriaturas();
     }
-    
-    function obtenerPorId($id){
+
+    function obtenerPorId($id) {
         $criaturaDAO = new CriaturaDAO();
         return $criaturaDAO->selectCriaturaByID($id);
     }
