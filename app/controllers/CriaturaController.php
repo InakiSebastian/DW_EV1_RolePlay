@@ -12,6 +12,8 @@ class CriaturaController {
         $criaturaDAO = new CriaturaDAO();
         return $criaturaDAO->selectTodasLasCriaturas();
     }
+    
+    
 }
 
 ?>
