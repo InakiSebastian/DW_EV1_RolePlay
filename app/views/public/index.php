@@ -15,6 +15,11 @@ $listaCriaturas = $criaturaController->obtenerListaCriaturas();
     <div class="container-fluid">
         <div class="row">
                 <?php
+                
+                if (count($listaCriaturas) == 0) {
+                    echo "<h4 class='text-center mt-2 text-danger'>ACTUALMENTE NO TENEMOS NINGUNA CRIATURA</h4>";
+                }
+                
                 foreach ($listaCriaturas as $criatura) {
                     echo '<div class="card ms-3" style="width: 18rem;">';
                     echo '<img class="img-fluid" style="height:200px;width:17rem;" src="' . $criatura->getAvatar() . '" class="card-img-top" alt="...">';
