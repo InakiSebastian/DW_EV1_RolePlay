@@ -58,3 +58,63 @@ La base de datos almacena información sobre las criaturas, y se usa una tabla `
 - `attackPower` 
 - `lifeLevel`
 - `weapon`
+
+## DIAGRAMA DE CLASES UML
+
+  
+```mermaid
+classDiagram
+class Criatura{
+- idCreature: int  
+- name: String  
+- Description: String  
+-avatar: String  
+-lifeLevel: int  
+-weapon: String
++getters()
++setters()
+}
+
+class CriaturaDAO{
+- CRIATURA_TABLE: STRING = "creature" CONST 
+- conex: mysqli
++ selectTodasLasCriaturas(): array<Criatura>  
++selectCriaturaByID(id:int): Criatura  
++insertCriatura(criatura:Criatura) : bool  
++updateCriatura(criatura:Criatura) : bool  
++delete(id:int) : bool
+}
+class CriaturaController{
++ __construct()  
++ borrarCriatura()  
++ editarCriatura()  
++ crearCriatura()  
++ obtenerListaCriaturas()  
++ obtenerPorId(id)
+}
+
+class PersistentManager{
+- instance: PersistentMangaer (static)  
+- connection:myysqli (static)  
+-userBD: String  
+-psswdBD: String  
+-nameBD: String  
+-hostBD: String
++ getInstance(): PersistentManager  
+- __construct()  
+- establishCredentials()  
++get_connection(): mysqli
+}
+class LoginController{
++ __construct()  
++ comprobarUser()  
++ logout()
+}
+
+
+
+Criatura>-- CriaturaDAO
+CriaturaController--> CriaturaDAO
+PersistentManager>-- CriaturaDAO
+
+
